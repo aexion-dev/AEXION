@@ -548,67 +548,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.5397929928;
+    opacity: 0.1077835982;
   }
   5% {
-    opacity: 0.0831883915;
+    opacity: 0.7918136173;
   }
   10% {
-    opacity: 0.7250691187;
+    opacity: 0.1645399558;
   }
   15% {
-    opacity: 0.4725765539;
+    opacity: 0.247526624;
   }
   20% {
-    opacity: 0.5250496016;
+    opacity: 0.7192808815;
   }
   25% {
-    opacity: 0.3392707266;
+    opacity: 0.0599424571;
   }
   30% {
-    opacity: 0.3158908319;
+    opacity: 0.6995784995;
   }
   35% {
-    opacity: 0.2407518557;
+    opacity: 0.0995065973;
   }
   40% {
-    opacity: 0.9476319658;
+    opacity: 0.4076989208;
   }
   45% {
-    opacity: 0.9213220789;
+    opacity: 0.7114052722;
   }
   50% {
-    opacity: 0.6580903762;
+    opacity: 0.3869309633;
   }
   55% {
-    opacity: 0.9062235823;
+    opacity: 0.3977775632;
   }
   60% {
-    opacity: 0.5756300642;
+    opacity: 0.8752350837;
   }
   65% {
-    opacity: 0.3344577865;
+    opacity: 0.5527605471;
   }
   70% {
-    opacity: 0.3027989414;
+    opacity: 0.3540630697;
   }
   75% {
-    opacity: 0.5858886187;
+    opacity: 0.727379988;
   }
   80% {
-    opacity: 0.2921154194;
+    opacity: 0.696730168;
   }
   85% {
-    opacity: 0.5746491809;
+    opacity: 0.3325384073;
   }
   90% {
-    opacity: 0.7833999435;
+    opacity: 0.0245408501;
   }
   95% {
-    opacity: 0.3314632044;
+    opacity: 0.044725868;
   }
   100% {
-    opacity: 0.5738205742;
+    opacity: 0.8455247368;
   }
 }
 @keyframes menuAnimation {
@@ -785,6 +785,7 @@ body ::-moz-selection {
   border-right: 1px solid #fff;
   transition: 0.18s ease-in-out;
   font-weight: 700;
+  text-decoration: none;
 }
 @media (max-width: 1000px) {
   .slide-content-cta {
@@ -1207,6 +1208,91 @@ body ::-moz-selection {
   animation-name: fadeIn;
   animation-delay: 0.5s;
   animation-duration: 0.7s;
+}
+
+.project_wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (min-width: 720px) {
+  .project_wrapper {
+    max-width: 1200px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .project_wrapper {
+    max-width: 1400px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+.project_wrapper .project_header {
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.project_wrapper .project_header h2 {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: din-condensed, sans-serif;
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 0.75;
+  letter-spacing: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  mix-blend-mode: screen;
+  filter: blur(1px);
+}
+.project_wrapper .project_header span {
+  color: #fff;
+  font-family: vcr_osd_monoregular;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  overflow: hidden;
+  z-index: 3;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  letter-spacing: 6px;
+  mix-blend-mode: screen;
+  filter: blur(0.6px);
+  animation: blink 1.4s ease-in-out infinite;
+}
+.project_wrapper .project_info {
+  width: 15%;
+  float: left;
+  font-family: "Fira Mono", monospace;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.12rem;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.project_wrapper .project_brief {
+  width: 55%;
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

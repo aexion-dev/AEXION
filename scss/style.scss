@@ -8,7 +8,6 @@
 
 // Variables
 $primaryColor: rgba(255, 255, 255, 0.9);
-
 $ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
 $ease-in-quint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
 $screen-background: #000;
@@ -770,6 +769,7 @@ body {
             border-right: 1px solid #fff;
             transition: .18s ease-in-out;
             font-weight: 700;
+            text-decoration: none;
             @include media(1000px) {
                 background-color: rgba(255, 255, 255, .3);
                 padding-top: 1.2rem;
@@ -1203,4 +1203,92 @@ $text-cut-up: .5s;
         animation-delay: $text-cut-up;
         animation-duration: $text-cut-up + .2s;
     }
+}
+
+
+.project_wrapper {
+
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media screen and (min-width: 720px) {
+    max-width: 1200px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media screen and (min-width: 1080px) {
+    max-width: 1400px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .project_header {
+    height: 100vh;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    h2 {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: din-condensed, sans-serif;
+      font-weight: 400;
+      font-weight: normal;
+      font-size: 90px;
+      line-height: .75;
+      letter-spacing: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      mix-blend-mode: screen;
+      filter: blur(1px);
+    }
+    span {
+      color: #fff;
+      font-family: vcr_osd_monoregular;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      overflow: hidden;
+      z-index: 3;
+      font-size: 16px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      letter-spacing: 6px;
+      mix-blend-mode: screen;
+      filter: blur(.6px);
+      animation: blink 1.4s ease-in-out infinite;
+    }
+  }
+
+  .project_info {
+    width: 15%;
+    float: left;
+    font-family: "Fira Mono", monospace;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .12rem;
+    font-size: .9rem;
+    line-height: 1;
+  }
+
+  .project_brief {
+    width: 55%;
+    float: right;
+  }
 }
