@@ -548,67 +548,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.1077835982;
+    opacity: 0.7460358554;
   }
   5% {
-    opacity: 0.7918136173;
+    opacity: 0.8531585764;
   }
   10% {
-    opacity: 0.1645399558;
+    opacity: 0.0495339236;
   }
   15% {
-    opacity: 0.247526624;
+    opacity: 0.0509383313;
   }
   20% {
-    opacity: 0.7192808815;
+    opacity: 0.4924905667;
   }
   25% {
-    opacity: 0.0599424571;
+    opacity: 0.4358061602;
   }
   30% {
-    opacity: 0.6995784995;
+    opacity: 0.3326929175;
   }
   35% {
-    opacity: 0.0995065973;
+    opacity: 0.0208293341;
   }
   40% {
-    opacity: 0.4076989208;
+    opacity: 0.5831363404;
   }
   45% {
-    opacity: 0.7114052722;
+    opacity: 0.1283837129;
   }
   50% {
-    opacity: 0.3869309633;
+    opacity: 0.5024870023;
   }
   55% {
-    opacity: 0.3977775632;
+    opacity: 0.7457368941;
   }
   60% {
-    opacity: 0.8752350837;
+    opacity: 0.801838287;
   }
   65% {
-    opacity: 0.5527605471;
+    opacity: 0.8062161314;
   }
   70% {
-    opacity: 0.3540630697;
+    opacity: 0.1287421399;
   }
   75% {
-    opacity: 0.727379988;
+    opacity: 0.4799317367;
   }
   80% {
-    opacity: 0.696730168;
+    opacity: 0.4505967543;
   }
   85% {
-    opacity: 0.3325384073;
+    opacity: 0.4572105274;
   }
   90% {
-    opacity: 0.0245408501;
+    opacity: 0.0140801266;
   }
   95% {
-    opacity: 0.044725868;
+    opacity: 0.0809880466;
   }
   100% {
-    opacity: 0.8455247368;
+    opacity: 0.2449238579;
   }
 }
 @keyframes menuAnimation {
@@ -702,7 +702,7 @@ body ::-moz-selection {
   overflow: hidden;
 }
 .slide-bg-text p {
-  font-family: "Playfair Display";
+  font-family: din-condensed, sans-serif;
   color: #000;
   font-size: 42vh;
   line-height: 0.8;
@@ -729,7 +729,8 @@ body ::-moz-selection {
 }
 @media (max-width: 1000px) {
   .slide-content {
-    left: calc(13vw + 1rem);
+    left: calc(13vw);
+    margin-top: 3rem;
   }
 }
 @media (max-height: 730px) {
@@ -739,8 +740,16 @@ body ::-moz-selection {
     left: calc(9vw + (.7) * 16vw);
   }
 }
+@media (max-width: 640px) {
+  .slide-content {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+  }
+}
 .slide-content-text {
-  font-family: "Playfair Display";
+  font-family: din-condensed, sans-serif;
   font-size: 9rem;
   letter-spacing: 0.2rem;
   line-height: 0.87;
@@ -769,7 +778,22 @@ body ::-moz-selection {
 }
 @media (max-width: 500px) {
   .slide-content-text {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    width: 60%;
+    position: relative;
+    left: calc(2vw + (.7) * 16vw);
+  }
+}
+@media (max-width: 840px) {
+  .slide-content-text > p {
+    line-height: 1 !important;
+    letter-spacing: 6px !important;
+  }
+}
+@media (max-width: 640px) {
+  .slide-content-text > p {
+    letter-spacing: 2px !important;
   }
 }
 .slide-content-text > p:last-child {
@@ -794,9 +818,12 @@ body ::-moz-selection {
     padding-bottom: 1.2rem;
   }
 }
-@media (max-width: 630px) {
+@media (max-width: 640px) {
   .slide-content-cta {
-    display: none;
+    margin: 0;
+    font-size: 0.7rem;
+    padding: 0.9rem 2rem;
+    align-self: center;
   }
 }
 .slide-content-cta:hover {
@@ -830,6 +857,16 @@ body ::-moz-selection {
     transform: translateY(-30%);
   }
 }
+@media (max-width: 640px) {
+  .slide-rect {
+    top: 30%;
+    transform: translateY(-40%);
+    left: 30vw;
+    width: 48vh;
+    height: 48vh;
+    display: none;
+  }
+}
 .slide-rect-filter {
   filter: brightness(110%) contrast(110%) saturate(110%);
 }
@@ -848,6 +885,13 @@ body ::-moz-selection {
 @media (max-height: 730px) {
   .slide-side-text {
     top: calc((40% - (20vw / 2)) + (5vh / 2));
+  }
+}
+@media (max-width: 640px) {
+  .slide-side-text {
+    left: calc(4vw);
+    top: calc((40% - (100vw / 2)) );
+    font-size: 0.7rem;
   }
 }
 .slide-side-text > span:first-child {

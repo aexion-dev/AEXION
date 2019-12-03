@@ -700,7 +700,7 @@ body {
         overflow: hidden;
     }
     &-bg-text p {
-        font-family: 'Playfair Display';
+        font-family: din-condensed, sans-serif;
         color: #000;
         font-size: 42vh;
         line-height: .8;
@@ -725,15 +725,22 @@ body {
         flex-direction: column;
         left: calc(#{$left-offset} + 1rem);
         @include media(1000px) {
-            left: calc(#{$left-offset} + 1rem);
+            left: calc(#{$left-offset});
+            margin-top: 3rem;
         }
         @include media-height(730px) {
             top: 30%;
             transform: translateY(-30%);
             left: calc(#{$left-offset-small} + (.7) * #{$rect-width-small});
         }
+        @include media(640px) {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 100%;
+        }
         &-text {
-            font-family: 'Playfair Display';
+            font-family: din-condensed, sans-serif;
             font-size: 9rem;
             letter-spacing: .2rem;
             line-height: .87;
@@ -752,7 +759,20 @@ body {
                 margin-bottom: 5.5rem;
             }
             @include media(500px) {
-                font-size: 3.5rem;
+                font-size: 4rem;
+                letter-spacing: 0.1rem;
+                width: 60%;
+                position: relative;
+                left: calc(2vw + (.7) * 16vw);
+            }
+            > p {
+              @include media(840px) {
+                  line-height: 1 !important;
+                  letter-spacing: 6px !important;
+              }
+              @include media(640px) {
+                  letter-spacing: 2px !important;
+              }
             }
             > p:last-child {
                 padding-left: 3rem;
@@ -775,8 +795,11 @@ body {
                 padding-top: 1.2rem;
                 padding-bottom: 1.2rem;
             }
-            @include media(630px) {
-                display: none;
+            @include media(640px) {
+              margin: 0;
+              font-size: 0.7rem;
+              padding: 0.9rem 2.0rem;
+              align-self: center;
             }
             &:hover {
                 color: #000;
@@ -806,6 +829,14 @@ body {
             top: 30%;
             transform: translateY(-30%);
         }
+        @include media(640px) {
+            top: 30%;
+            transform: translateY(-40%);
+            left: 30vw;
+            width: 48vh;
+            height: 48vh;
+            display: none;
+        }
         &-filter {
             filter: brightness(110%) contrast(110%) saturate(110%);
         }
@@ -822,6 +853,11 @@ body {
         }
         @include media-height(730px) {
             top: calc((40% - (#{$rect-height-small} / 2)) + (#{$rect-border-width-small} / 2));
+        }
+        @include media(640px) {
+            left: calc(4vw);
+            top: calc((40% - (100vw / 2)) );
+            font-size: 0.7rem;
         }
         > span:first-child {
             font-weight: 700;

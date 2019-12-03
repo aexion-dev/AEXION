@@ -29,7 +29,7 @@ const Home = {
             },
             {
                 headlineFirstLine: "AMS",
-                headlineSecondLine: "Construction",
+                headlineSecondLine: "Building",
                 sublineFirstLine: "BRAND IDENTITY",
                 sublineSecondLine: "WEB DESIGN",
                 bgImg: "img/ams_bg.jpg",
@@ -48,7 +48,7 @@ const Home = {
                 routeURL: "/i-did-what"
             },
             {
-                headlineFirstLine: "",
+                headlineFirstLine: " ",
                 headlineSecondLine: "Compass",
                 sublineFirstLine: "UX DESIGN",
                 sublineSecondLine: "WEB DESIGN",
@@ -98,7 +98,7 @@ const Elisian = {
     template: '#project-template'
 };
 
-const AMSConstruction = {
+const AMSBuilding = {
     template: '#project-template'
 };
 
@@ -114,7 +114,7 @@ const routes = [
     { path: '', component: Home },
     { path: '/i-did-what', component: IDidWhat },
     { path: '/elisian', component: Elisian },
-    { path: '/ams-construction', component: AMSConstruction },
+    { path: '/ams-building', component: AMSBuilding },
     { path: '/coyote-boxing', component: CoyoteBoxing },
     { path: '/compass', component: Compass }
 ]
