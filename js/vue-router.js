@@ -48,8 +48,8 @@ const Home = {
                 routeURL: "/i-did-what"
             },
             {
-                headlineFirstLine: " ",
-                headlineSecondLine: "Compass",
+                headlineFirstLine: "Compass",
+                headlineSecondLine: " ",
                 sublineFirstLine: "UX DESIGN",
                 sublineSecondLine: "WEB DESIGN",
                 bgImg: "img/compass_bg.jpg",
@@ -91,7 +91,13 @@ const Home = {
 }
 
 const IDidWhat = {
-    template: '#project-template'
+    template: '#project-template',
+    mounted() {
+      var Scrollbar = window.Scrollbar;
+      Scrollbar.init(document.querySelector('#my-scrollbar'), {
+        damping: 0.07
+      });
+    },
 };
 
 const Elisian = {
