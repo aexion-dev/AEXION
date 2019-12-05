@@ -279,140 +279,47 @@ body {
   height: 1px;
 }
 
-#main-content.ams {
-  background-image: url("../img/ams_bg.jpg");
-}
-
-#main-content.elisian {
-  background-image: url("../img/elisian_bg.jpg");
-}
-
-#main-content.ididwhat {
-  background-image: url("../img/ididwhat_bg.jpg");
-}
-
-#main-content.cbc {
-  background-image: url("../img/cbc_bg.jpg");
-}
-
-#main-content.compass {
-  background-image: url("../img/compass_bg.jpg");
-}
-
-#main-content.proof {
-  background-image: url("../img/proof_bg.jpg");
-}
-
-#project-preview {
+.splashScreen {
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  width: 50%;
-  float: left;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.project-info {
-  height: 75vh;
-  width: 60%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  z-index: 3;
-}
-.project-info .project-thumbnail {
-  width: 100%;
-  max-height: 50%;
-  overflow: hidden;
-  padding: 0;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-30px, -30px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.project-info img {
-  margin-bottom: 30px;
-  width: 100%;
-}
-.project-info h3 {
-  text-transform: uppercase;
-  font-family: "Fira Mono", monospace;
-  font-size: 14px;
-  margin-bottom: 10px;
-  padding: 0% 5%;
-}
-.project-info h2 {
-  text-transform: uppercase;
-  font-size: 36px;
-  font-family: din-condensed, sans-serif;
-  font-weight: normal;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  padding: 0% 5%;
-}
-.project-info p {
-  padding: 0% 5%;
-}
-
-#portfolio {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  width: 50%;
-  float: right;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.portfolio-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-}
-.portfolio-grid::before {
-  content: " ";
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.25) 25%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 3px, 1px 100%;
-  pointer-events: none;
+  overflow: hidden;
 }
-
-.portfolio-grid li {
-  display: inline-block;
-  width: 25%;
-  margin: 8px;
-  border: solid 2px rgba(255, 255, 255, 0.2);
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-filter: grayscale(80%);
-  filter: grayscale(80%);
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+.splashScreen .loadingContainer {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  overflow: hidden;
 }
-.portfolio-grid li > a,
-.portfolio-grid li > a img {
+.splashScreen .loadingContainer .loadingElements {
   width: 100%;
-  border: none;
-  outline: none;
-  display: block;
-  position: relative;
+  height: 100%;
+  opacity: 0;
 }
-
-.portfolio-grid li.active {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-  border-width: 5px;
-  border-color: #ffcd00;
-  transform: scale(1.03);
+.splashScreen .loadingContainer .loadingElements .splashLogo {
+  width: 50%;
+  margin: 0 0 50px;
+}
+.splashScreen .loadingContainer .loadingElements .loadingBarCont {
+  width: 100%;
+  background: none;
+  border: 2px solid #fff;
+  padding: 5px 4px;
+  display: block;
+  margin: 50px 0 0;
+  overflow: hidden;
+  filter: blur(1px);
+}
+.splashScreen .loadingContainer .loadingElements .loadingBar {
+  width: 0%;
+  height: 6px;
+  background: #fff;
+  left: -100%;
 }
 
 @keyframes glitch-1 {
@@ -548,67 +455,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.4570883821;
+    opacity: 0.5303129286;
   }
   5% {
-    opacity: 0.5113961837;
+    opacity: 0.7914719563;
   }
   10% {
-    opacity: 0.6646078158;
+    opacity: 0.1006423046;
   }
   15% {
-    opacity: 0.8648328844;
+    opacity: 0.676497721;
   }
   20% {
-    opacity: 0.0271084887;
+    opacity: 0.1651206451;
   }
   25% {
-    opacity: 0.4545886413;
+    opacity: 0.8060872585;
   }
   30% {
-    opacity: 0.3476283968;
+    opacity: 0.9883807995;
   }
   35% {
-    opacity: 0.0740039935;
+    opacity: 0.0162000231;
   }
   40% {
-    opacity: 0.2170861149;
+    opacity: 0.0725855992;
   }
   45% {
-    opacity: 0.5519426194;
+    opacity: 0.817991891;
   }
   50% {
-    opacity: 0.2514230602;
+    opacity: 0.5763339062;
   }
   55% {
-    opacity: 0.8805778701;
+    opacity: 0.0236206723;
   }
   60% {
-    opacity: 0.1637766862;
+    opacity: 0.8812155276;
   }
   65% {
-    opacity: 0.7244606945;
+    opacity: 0.5570729659;
   }
   70% {
-    opacity: 0.2018767161;
+    opacity: 0.9026549782;
   }
   75% {
-    opacity: 0.9607597224;
+    opacity: 0.8821163676;
   }
   80% {
-    opacity: 0.7991343858;
+    opacity: 0.5444325377;
   }
   85% {
-    opacity: 0.1492073656;
+    opacity: 0.853905449;
   }
   90% {
-    opacity: 0.7536280633;
+    opacity: 0.8350802558;
   }
   95% {
-    opacity: 0.5128089976;
+    opacity: 0.5379940064;
   }
   100% {
-    opacity: 0.0931439883;
+    opacity: 0.3908077876;
   }
 }
 @keyframes menuAnimation {
@@ -1390,6 +1297,7 @@ body ::-moz-selection {
 .project_wrapper .project_content .content_image_block img {
   width: 100%;
   height: auto;
+  max-height: 90vh;
 }
 
 .section--small {

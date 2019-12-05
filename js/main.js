@@ -173,6 +173,9 @@ $(document).ready(function() {
     loadContent(link);
   });
 
+  $('.loadingBar').delay(1500).animate({width: '100%'}, 2000);
+  $('.loadingElements').delay(500).animate({opacity: '1'}, 1000);
+
 
 
   //Main Screen Background Glitch
