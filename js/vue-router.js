@@ -94,7 +94,7 @@ const IDidWhat = {
     template: '#project-template',
     mounted() {
       var Scrollbar = window.Scrollbar;
-      Scrollbar.init(document.querySelector('#my-scrollbar'), {
+      Scrollbar.init(document.querySelector('#scrollbar'), {
         damping: 0.1
       });
     },

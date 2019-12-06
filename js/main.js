@@ -120,51 +120,11 @@ $(document).ready(function() {
   function loadContent(href){
     $mainContent
         .fadeOut(200, function() {
-            $mainContent.hide().load(href, function() {
-
-              portOptions = document.querySelectorAll('.portfolio-option');
-              projectTitle = document.querySelectorAll('#project-title');
-              projectType = document.querySelectorAll('#project-type');
-              projectDesc = document.querySelectorAll('#project-desc');
-              projectImg = document.querySelectorAll('#project-img');
-
-              //User Interacts With Portfolio Options
-              portOptions.forEach(function (option) {
-                //User Hovers Over Portfolio Option
-                option.addEventListener('mouseenter', function () {
-                  //Deselect All Options
-                  for (var i = 0; i < portOptions.length; i++) {
-                    var oldOption = portOptions[i];
-                    if (oldOption.classList.contains('active')){
-                        $(oldOption).removeClass( "active" );
-                    }
-                  }
-
-                  $('.project-effect').removeClass().addClass('container project-effect');
-
-                  //Select New Option
-                  $(option).addClass( "active" );
-
-                  projectTitle[0].innerHTML = option.dataset.title;
-                  projectType[0].innerHTML = option.dataset.type;
-                  projectDesc[0].innerHTML = option.dataset.desc;
-
-                  var URI = $(option.childNodes[1]).attr('href');
-                  var newsrc = "img/" + URI + "_thumb.png";
-                  $(projectImg[0]).attr("src", newsrc);
-                  $('.project-effect').addClass(URI);
-                });
-              });
-
-              console.log(portOptions);
-                $mainContent.fadeIn(200, function() {
-                    $mainContent.animate({
-                        height: baseHeight + $mainContent.height() + "px"
-                    });
-                });
-                console.log(href);
-            });
+            alert("test");
+            //$mainContent.hide().load(href);
         });
+
+
   }
 
   //Use History API to Allow Forward/Back Button Usage
@@ -173,6 +133,7 @@ $(document).ready(function() {
     loadContent(link);
   });
 
+  //Loading Screen
   $('.loadingBar').delay(1500).animate({width: '100%'}, 2000);
   $('.loadingElements').delay(500).animate({opacity: '1'}, 1000);
 

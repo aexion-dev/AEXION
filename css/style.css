@@ -286,6 +286,7 @@ body {
   top: 0;
   left: 0;
   overflow: hidden;
+  background-image: radial-gradient(#151515, #000);
 }
 .splashScreen .loadingContainer {
   width: 400px;
@@ -455,67 +456,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.5303129286;
+    opacity: 0.1671162979;
   }
   5% {
-    opacity: 0.7914719563;
+    opacity: 0.052347069;
   }
   10% {
-    opacity: 0.1006423046;
+    opacity: 0.4954356411;
   }
   15% {
-    opacity: 0.676497721;
+    opacity: 0.1712295637;
   }
   20% {
-    opacity: 0.1651206451;
+    opacity: 0.0830042183;
   }
   25% {
-    opacity: 0.8060872585;
+    opacity: 0.8100144814;
   }
   30% {
-    opacity: 0.9883807995;
+    opacity: 0.6396285451;
   }
   35% {
-    opacity: 0.0162000231;
+    opacity: 0.4385914878;
   }
   40% {
-    opacity: 0.0725855992;
+    opacity: 0.5838761754;
   }
   45% {
-    opacity: 0.817991891;
+    opacity: 0.4044635468;
   }
   50% {
-    opacity: 0.5763339062;
+    opacity: 0.3016107492;
   }
   55% {
-    opacity: 0.0236206723;
+    opacity: 0.9870177025;
   }
   60% {
-    opacity: 0.8812155276;
+    opacity: 0.8261401577;
   }
   65% {
-    opacity: 0.5570729659;
+    opacity: 0.8389084596;
   }
   70% {
-    opacity: 0.9026549782;
+    opacity: 0.2312291598;
   }
   75% {
-    opacity: 0.8821163676;
+    opacity: 0.7162844981;
   }
   80% {
-    opacity: 0.5444325377;
+    opacity: 0.44640397;
   }
   85% {
-    opacity: 0.853905449;
+    opacity: 0.2501126438;
   }
   90% {
-    opacity: 0.8350802558;
+    opacity: 0.5631520605;
   }
   95% {
-    opacity: 0.5379940064;
+    opacity: 0.2027695417;
   }
   100% {
-    opacity: 0.3908077876;
+    opacity: 0.4037997738;
   }
 }
 @keyframes menuAnimation {
