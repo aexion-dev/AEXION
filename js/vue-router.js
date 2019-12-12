@@ -1,3 +1,6 @@
+Vue.component('loading-screen', {
+  template: '#loading-screen'
+})
 
 const Home = {
     template: '#home',
@@ -25,7 +28,7 @@ const Home = {
                 bgImg: "img/elisian_bg.jpg",
                 rectImg: "img/elisian_thumb.png",
                 icoImg: "img/elisian_icon.png",
-                routeURL: "/i-did-what"
+                routeURL: "/elisian"
             },
             {
                 headlineFirstLine: "AMS",
@@ -72,10 +75,10 @@ const Home = {
       productRotatorSlide.addEventListener("touchend", function(event) {
           var threshold = startX - endX;
 
-          if (threshold < 150 && 0 < this.currentSlide) {
+          if (threshold < 250 && 0 < this.currentSlide) {
               this.currentSlide--;
           }
-          if (threshold > -150 && this.currentSlide < this.slides.length - 1) {
+          if (threshold > -250 && this.currentSlide < this.slides.length - 1) {
               this.currentSlide++;
           }
       }.bind(this));
@@ -101,7 +104,13 @@ const IDidWhat = {
 };
 
 const Elisian = {
-    template: '#project-template'
+    template: '#elisian-project',
+    mounted() {
+      var Scrollbar = window.Scrollbar;
+      Scrollbar.init(document.querySelector('#scrollbar'), {
+        damping: 0.1
+      });
+    },
 };
 
 const AMSBuilding = {
@@ -130,5 +139,23 @@ const router = new VueRouter({
 });
 
 new Vue({
-    router
+    router,
+    data: {
+      isLoading: true
+    },
+    mounted() {
+
+      //Loading Screen
+      $('.loadingBar').delay(1500).animate({width: '100%'}, 2000);
+      $('.loadingElements').delay(500).animate({opacity: '1'}, 1000);
+
+      setTimeout(() => {
+        $('.wrapper').addClass('fade-load');
+        $('.loadingContainer').fadeOut(1000, function() {
+          $('.splashScreen').fadeOut(2000, function() {
+              this.isLoading = false;
+          });
+        });
+      }, 4500)
+    }
 }).$mount('#app');

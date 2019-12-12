@@ -20,9 +20,20 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/stats.js"></script>
     </head>
     <body>
+      <script type="text/x-template" id="loading-screen">
+        <div class="splashScreen screen-effect">
+          <div class="loadingContainer">
+            <div class="loadingElements">
+              <img src="https://i.imgur.com/tr5kmLM.png" class="splashLogo">
+              <div class="loadingBarCont">
+                <div class="loadingBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
       <script type="text/x-template" id="home">
         <div class="wrapper" v-cloak v-bind:class="{'is-previous': isPreviousSlide, 'first-load': isFirstLoad}">
           <div class="slide-wrapper screen-effect"
@@ -53,6 +64,21 @@
                     v-for="(slide, index) in slides"
                     v-bind:class="{ active: index === currentSlide }"
                     v-on:click="updateSlide(index)"></span>
+          </div>
+          <div class="back-buttton-container">
+            <a class='animated-arrow' href='https://google.com'>
+              <span class='the-arrow -left'>
+                <span class='shaft'></span>
+              </span>
+              <span class='main'>
+                <span class='text'>
+                  Discover the Agency
+                </span>
+                <span class='the-arrow -right'>
+                  <span class='shaft'></span>
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       </script>
@@ -104,7 +130,55 @@
         </div>
       </script>
 
+      <script type="text/x-template" id="elisian-project">
+        <div id="scrollbar" data-scrollbar>
+          <div class="project_wrapper">
+            <div class="project_header">
+              <h2>ELISIAN</h2>
+              <span>[ SCROLL DOWN ]</span>
+            </div>
+            <div class="project_info section--small">
+              <div class="project_details">
+                  <h4>Date</h4>
+                  <p>01/20/12</p>
+                <ul class="project_tags">
+                  <h4>Category</h4>
+                  <li>Icon Design</li>
+                  <li>UX/UI Design</li>
+                  <li>Motion Design</li>
+                  <li>App Development</li>
+                </ul>
+              </div>
+              <div class="project_brief">
+                <p>I Did What? is an upcoming mobile application that allows users to replay their previous night in a story-journal format.
+                  Taking inspiration from the popular film "The Hangover", the apps primary purpose is to record the events of a night out,
+                  because they may not be so memorable the following morning. The project started with icon development, and included
+                  everything from interface design to promotional videos. The app is scheduled to release early next year on both android
+                  and apple devices.</p>
+              </div>
+            </div>
+            <div class="project_content section--medium">
+              <div class="content_image_block">
+                <img src="img/project-test-img.png" />
+              </div>
+            </div>
+              <ul>
+                  <li>
+                      <router-link to="/">Home</router-link>
+                  </li>
+              </ul>
+          </div>
+          <div class="scrollbar-track scrollbar-track-x">
+            <div class="scrollbar-thumb scrollbar-thumb-x"></div>
+          </div>
+          <div class="scrollbar-track scrollbar-track-y">
+            <div class="scrollbar-thumb scrollbar-thumb-y"></div>
+          </div>
+        </div>
+      </script>
+
       <div id="app">
+          <loading-screen v-if="isLoading"></loading-screen>
           <router-view></router-view>
       </div>
       <script src="js/main.js"></script>

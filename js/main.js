@@ -35,9 +35,9 @@ $(document).ready(function() {
         || (navigator.msMaxTouchPoints > 0));
   }
 
-  if (is_touch_device()) {
+  /*if (is_touch_device()) {
     document.getElementById('start-msg').innerHTML='[ TAP HERE TO START ]';
-  }
+  }*/
 
   //User Clicks Start Message
   startmsg.click(function(){
@@ -118,10 +118,16 @@ $(document).ready(function() {
 
   //Load New Scene
   function loadContent(href){
+    console.log(href);
     $mainContent
         .fadeOut(200, function() {
-            alert("test");
-            //$mainContent.hide().load(href);
+            $mainContent.hide().load(href, function() {
+              $mainContent.fadeIn(200, function() {
+                $mainContent.animate({
+                  height: baseHeight + $mainContent.height() + "px"
+                });
+              });
+            });
         });
 
 
@@ -132,10 +138,6 @@ $(document).ready(function() {
     link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
     loadContent(link);
   });
-
-  //Loading Screen
-  $('.loadingBar').delay(1500).animate({width: '100%'}, 2000);
-  $('.loadingElements').delay(500).animate({opacity: '1'}, 1000);
 
 
 

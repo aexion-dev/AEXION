@@ -280,12 +280,13 @@ body {
 }
 
 .splashScreen {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: 7;
   background-image: radial-gradient(#151515, #000);
 }
 .splashScreen .loadingContainer {
@@ -321,6 +322,19 @@ body {
   height: 6px;
   background: #fff;
   left: -100%;
+}
+@media (max-width: 420px) {
+  .splashScreen .loadingContainer {
+    width: 300px;
+  }
+  .splashScreen .loadingContainer .loadingElements .splashLogo {
+    margin: 0;
+  }
+  .splashScreen .loadingContainer .loadingElements .loadingBarCont {
+    width: 90%;
+    margin: 25px 0 0;
+    margin-left: 5%;
+  }
 }
 
 @keyframes glitch-1 {
@@ -456,67 +470,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.1671162979;
+    opacity: 0.2105147476;
   }
   5% {
-    opacity: 0.052347069;
+    opacity: 0.3318153278;
   }
   10% {
-    opacity: 0.4954356411;
+    opacity: 0.2893763589;
   }
   15% {
-    opacity: 0.1712295637;
+    opacity: 0.1602722321;
   }
   20% {
-    opacity: 0.0830042183;
+    opacity: 0.6523579358;
   }
   25% {
-    opacity: 0.8100144814;
+    opacity: 0.7722180393;
   }
   30% {
-    opacity: 0.6396285451;
+    opacity: 0.4525167314;
   }
   35% {
-    opacity: 0.4385914878;
+    opacity: 0.9431348908;
   }
   40% {
-    opacity: 0.5838761754;
+    opacity: 0.9840944888;
   }
   45% {
-    opacity: 0.4044635468;
+    opacity: 0.3569156451;
   }
   50% {
-    opacity: 0.3016107492;
+    opacity: 0.4954952661;
   }
   55% {
-    opacity: 0.9870177025;
+    opacity: 0.9169487783;
   }
   60% {
-    opacity: 0.8261401577;
+    opacity: 0.5436588283;
   }
   65% {
-    opacity: 0.8389084596;
+    opacity: 0.8408564735;
   }
   70% {
-    opacity: 0.2312291598;
+    opacity: 0.9764654868;
   }
   75% {
-    opacity: 0.7162844981;
+    opacity: 0.1456464409;
   }
   80% {
-    opacity: 0.44640397;
+    opacity: 0.0072768801;
   }
   85% {
-    opacity: 0.2501126438;
+    opacity: 0.6408609985;
   }
   90% {
-    opacity: 0.5631520605;
+    opacity: 0.456030139;
   }
   95% {
-    opacity: 0.2027695417;
+    opacity: 0.2690444289;
   }
   100% {
-    opacity: 0.4037997738;
+    opacity: 0.4486596133;
   }
 }
 @keyframes menuAnimation {
@@ -824,7 +838,7 @@ body ::-moz-selection {
 
 .controls-container {
   position: absolute;
-  z-index: 200;
+  z-index: 6;
   display: flex;
   bottom: 0;
   right: 0;
@@ -902,7 +916,7 @@ body ::-moz-selection {
 
 .pagination-container {
   position: absolute;
-  z-index: 200;
+  z-index: 6;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1167,21 +1181,37 @@ body ::-moz-selection {
   animation-delay: 0.9s;
 }
 
-.first-load .slide-wrapper.active .slide-side-text,
-.first-load .slide-wrapper.active .slide-content-cta,
-.first-load .slide-wrapper.active .slide-rect,
-.first-load .controls-container {
-  opacity: 0;
-  animation-name: fadeIn;
-  animation-delay: 0.3s;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-}
 .first-load .slide-wrapper.active .slide-content-text > p {
   animation-name: fadeIn;
   animation-delay: 0.5s;
   animation-duration: 0.7s;
+}
+
+.fade-load .slide-wrapper.active .slide-side-text,
+.fade-load .slide-wrapper.active .slide-content-cta,
+.fade-load .controls-container {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 2s;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.fade-load .slide-wrapper.active .slide-content-text > p {
+  opacity: 0;
+  animation-delay: 2s;
+  animation-name: cutTextDown;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.fade-load .slide-wrapper.active .slide-rect {
+  opacity: 0;
+  animation-name: rectMovementRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
 }
 
 .project_wrapper {

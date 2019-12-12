@@ -20,6 +20,24 @@ $screen-background: #000;
   --bg: #000;
 }
 
+@mixin media($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin media-min($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin media-height($breakpoint) {
+    @media (max-height: $breakpoint) {
+        @content;
+    }
+}
+
 //Styles
 * {
   -moz-box-sizing: border-box;
@@ -339,12 +357,13 @@ body {
 }
 
 .splashScreen {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: 7;
   background-image: radial-gradient( #151515, #000 );
 
   .loadingContainer {
@@ -381,6 +400,20 @@ body {
         background: #fff;
         left: -100%;
       }
+    }
+    @include media(420px) {
+        width: 300px;
+
+        .loadingElements {
+          .splashLogo {
+            margin: 0;
+          }
+          .loadingBarCont {
+            width: 90%;
+            margin: 25px 0 0;
+            margin-left: 5%;
+          }
+        }
     }
   }
 }
@@ -498,26 +531,6 @@ body {
   0%   { filter: blur(5px); opacity: 0.45;}
   50% { filter: blur(3px); opacity: 0.85;}
   100%{ filter: blur(0px); opacity: 1;}
-}
-
-
-
-@mixin media($breakpoint) {
-    @media (max-width: $breakpoint) {
-        @content;
-    }
-}
-
-@mixin media-min($breakpoint) {
-    @media (min-width: $breakpoint) {
-        @content;
-    }
-}
-
-@mixin media-height($breakpoint) {
-    @media (max-height: $breakpoint) {
-        @content;
-    }
 }
 
 // ------------- VARIABLES ------------- //
@@ -799,7 +812,7 @@ body {
 .controls {
     &-container {
         position: absolute;
-        z-index: 200;
+        z-index: 6;
         display: flex;
         bottom: 0;
         right: 0;
@@ -875,7 +888,7 @@ body {
 .pagination {
     &-container {
         position: absolute;
-        z-index: 200;
+        z-index: 6;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -1161,17 +1174,41 @@ $text-cut-up: .5s;
     .slide-wrapper.active .slide-content-cta,
     .slide-wrapper.active .slide-rect,
     .controls-container {
-        opacity: 0;
-        animation-name: fadeIn;
-        animation-delay: .3s;
-        animation-duration: .3s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in;
+
     }
     .slide-wrapper.active .slide-content-text > p {
         animation-name: fadeIn;
         animation-delay: $text-cut-up;
         animation-duration: $text-cut-up + .2s;
+    }
+}
+
+.fade-load {
+    .slide-wrapper.active .slide-side-text,
+    .slide-wrapper.active .slide-content-cta,
+    .controls-container {
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-delay: 2s;
+        animation-duration: .3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .slide-wrapper.active .slide-content-text > p {
+        opacity: 0;
+        animation-delay: 2s;
+        animation-name: cutTextDown;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+    .slide-wrapper.active .slide-rect {
+      opacity: 0;
+      animation-name: rectMovementRight;
+      animation-duration: $text-cut-up;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 2s;
     }
 }
 
