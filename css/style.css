@@ -47,7 +47,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 1200px) {
   .container {
     height: 100%;
   }
@@ -240,9 +240,14 @@ body {
 .menu-option.selected::before {
   content: "►";
   position: absolute;
-  transform: translate(-25px, 2px);
+  transform: translate(-25px, 0px);
   font-size: 18px;
   color: #00ffff;
+}
+@media screen and (min-width: 480px) {
+  .menu-option.selected::before {
+    transform: translate(-25px, 2px);
+  }
 }
 
 .screen-bottom {
@@ -470,67 +475,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.2105147476;
+    opacity: 0.0473324168;
   }
   5% {
-    opacity: 0.3318153278;
+    opacity: 0.2715644017;
   }
   10% {
-    opacity: 0.2893763589;
+    opacity: 0.4531779919;
   }
   15% {
-    opacity: 0.1602722321;
+    opacity: 0.81331646;
   }
   20% {
-    opacity: 0.6523579358;
+    opacity: 0.8486661158;
   }
   25% {
-    opacity: 0.7722180393;
+    opacity: 0.5148594699;
   }
   30% {
-    opacity: 0.4525167314;
+    opacity: 0.1636820947;
   }
   35% {
-    opacity: 0.9431348908;
+    opacity: 0.2088951691;
   }
   40% {
-    opacity: 0.9840944888;
+    opacity: 0.9598819641;
   }
   45% {
-    opacity: 0.3569156451;
+    opacity: 0.3437563602;
   }
   50% {
-    opacity: 0.4954952661;
+    opacity: 0.9720997912;
   }
   55% {
-    opacity: 0.9169487783;
+    opacity: 0.2114843022;
   }
   60% {
-    opacity: 0.5436588283;
+    opacity: 0.6030117716;
   }
   65% {
-    opacity: 0.8408564735;
+    opacity: 0.2409550794;
   }
   70% {
-    opacity: 0.9764654868;
+    opacity: 0.242609566;
   }
   75% {
-    opacity: 0.1456464409;
+    opacity: 0.5893262992;
   }
   80% {
-    opacity: 0.0072768801;
+    opacity: 0.0477742316;
   }
   85% {
-    opacity: 0.6408609985;
+    opacity: 0.2263291854;
   }
   90% {
-    opacity: 0.456030139;
+    opacity: 0.535887792;
   }
   95% {
-    opacity: 0.2690444289;
+    opacity: 0.9870821634;
   }
   100% {
-    opacity: 0.4486596133;
+    opacity: 0.8944046595;
   }
 }
 @keyframes menuAnimation {
@@ -964,6 +969,63 @@ body ::-moz-selection {
   width: 35px;
 }
 
+.back-button-container {
+  position: absolute;
+  z-index: 6;
+  left: 2rem;
+  top: 2rem;
+}
+.back-button-container a {
+  height: 30px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  filter: blur(0.4px);
+  opacity: 0.8;
+  transition: 0.18s ease-in-out;
+}
+.back-button-container a:hover {
+  opacity: 1;
+}
+.back-button-container a .back-arrow {
+  background: #fff;
+  height: 2px;
+  width: 70px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+}
+.back-button-container a .back-arrow:before, .back-button-container a .back-arrow:after {
+  content: "";
+  background: #fff;
+  position: absolute;
+  height: 2px;
+  width: 13px;
+}
+.back-button-container a .back-arrow:before {
+  left: -4px;
+  bottom: -4px;
+  transform: rotate(45deg);
+}
+.back-button-container a .back-arrow:after {
+  left: -4px;
+  top: -4px;
+  transform: rotate(-45deg);
+}
+.back-button-container a .back-arrow-text {
+  font-family: "Fira Mono", monospace;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.12rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none !important;
+  padding-left: 1rem;
+  padding-top: 1px;
+  white-space: nowrap;
+}
+
 @keyframes slideLeft {
   from {
     transform: translateX(0);
@@ -1189,7 +1251,8 @@ body ::-moz-selection {
 
 .fade-load .slide-wrapper.active .slide-side-text,
 .fade-load .slide-wrapper.active .slide-content-cta,
-.fade-load .controls-container {
+.fade-load .controls-container,
+.fade-load .back-button-container {
   opacity: 0;
   animation-name: fadeIn;
   animation-delay: 2s;
