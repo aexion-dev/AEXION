@@ -63,7 +63,7 @@ const Home = {
         ]
       }
     },
-    mounted() {
+    mounted() {/*
       var productRotatorSlide = document.getElementById("app");
       var startX = 0;
       var endX = 0;
@@ -82,12 +82,22 @@ const Home = {
               this.currentSlide++;
           }
       }.bind(this));
-    },
+    */},
     methods: {
         updateSlide(index) {
             index < this.currentSlide ? this.isPreviousSlide = true : this.isPreviousSlide = false;
             this.currentSlide = index;
             this.isFirstLoad = false;
+        },
+        prevSlide() {
+          if ( 0 < this.currentSlide) {
+              this.currentSlide--;
+          }
+        },
+        nextSlide() {
+          if ( this.currentSlide < this.slides.length - 1) {
+              this.currentSlide++;
+          }
         }
     }
 

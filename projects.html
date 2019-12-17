@@ -54,10 +54,12 @@
                   <h2 class="slide-side-text"><span>{{ slide.sublineFirstLine }} / </span><span>{{ slide.sublineSecondLine }}</span></h2></div>
           </div>
           <div class="controls-container">
+              <div class="controls-left-arrow" v-on:click="prevSlide()"></div>
               <button class="controls-button"
                       v-for="(slide, index) in slides"
                       v-bind:class="{ active: index === currentSlide }"
                       v-on:click="updateSlide(index)"><img v-bind:src='slide.icoImg'/></button>
+              <div class="controls-right-arrow" v-on:click="nextSlide()"></div>
           </div>
           <div class="pagination-container">
               <span class="pagination-item"

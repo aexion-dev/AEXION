@@ -475,67 +475,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.0473324168;
+    opacity: 0.1973901727;
   }
   5% {
-    opacity: 0.2715644017;
+    opacity: 0.2449741823;
   }
   10% {
-    opacity: 0.4531779919;
+    opacity: 0.4871586214;
   }
   15% {
-    opacity: 0.81331646;
+    opacity: 0.3194381061;
   }
   20% {
-    opacity: 0.8486661158;
+    opacity: 0.7783701967;
   }
   25% {
-    opacity: 0.5148594699;
+    opacity: 0.8682993409;
   }
   30% {
-    opacity: 0.1636820947;
+    opacity: 0.4414843904;
   }
   35% {
-    opacity: 0.2088951691;
+    opacity: 0.136127813;
   }
   40% {
-    opacity: 0.9598819641;
+    opacity: 0.1464284995;
   }
   45% {
-    opacity: 0.3437563602;
+    opacity: 0.8736260357;
   }
   50% {
-    opacity: 0.9720997912;
+    opacity: 0.0002859076;
   }
   55% {
-    opacity: 0.2114843022;
+    opacity: 0.3396732247;
   }
   60% {
-    opacity: 0.6030117716;
+    opacity: 0.9203035387;
   }
   65% {
-    opacity: 0.2409550794;
+    opacity: 0.9942587862;
   }
   70% {
-    opacity: 0.242609566;
+    opacity: 0.2862388385;
   }
   75% {
-    opacity: 0.5893262992;
+    opacity: 0.0022411867;
   }
   80% {
-    opacity: 0.0477742316;
+    opacity: 0.6570936703;
   }
   85% {
-    opacity: 0.2263291854;
+    opacity: 0.7362098848;
   }
   90% {
-    opacity: 0.535887792;
+    opacity: 0.5773727327;
   }
   95% {
-    opacity: 0.9870821634;
+    opacity: 0.4234917965;
   }
   100% {
-    opacity: 0.8944046595;
+    opacity: 0.3120281816;
   }
 }
 @keyframes menuAnimation {
@@ -584,7 +584,7 @@ body ::-moz-selection {
 }
 @media (max-width: 630px) {
   .wrapper {
-    height: 100vh;
+    height: calc(100vh - 44px);
     min-height: 0;
   }
 }
@@ -669,7 +669,7 @@ body ::-moz-selection {
 }
 @media (max-width: 640px) {
   .slide-content {
-    top: 50%;
+    top: 48vh;
     transform: translateY(-50%);
     left: 0;
     width: 100%;
@@ -701,14 +701,13 @@ body ::-moz-selection {
 }
 @media (max-width: 640px) {
   .slide-content-text {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 640px) {
   .slide-content-text {
     font-size: 5rem;
     letter-spacing: 0.1rem;
-    width: 60%;
     position: relative;
     left: calc(2vw + (.7) * 16vw);
   }
@@ -784,15 +783,13 @@ body ::-moz-selection {
     border-width: 5vh;
   }
 }
-@media (max-height: 730px) {
+@media (max-width: 640px) and (min-height: 700px) {
   .slide-rect {
-    top: 30%;
-    transform: translateY(-30%);
+    top: 10vh;
   }
 }
 @media (max-width: 640px) {
   .slide-rect {
-    top: 30%;
     transform: translateY(-40%);
     left: calc(2vw + (.7) * 16vw);
     width: 38vh;
@@ -855,6 +852,24 @@ body ::-moz-selection {
     left: 0;
   }
 }
+.controls-left-arrow, .controls-right-arrow {
+  display: none;
+}
+@media (max-width: 640px) {
+  .controls-left-arrow, .controls-right-arrow {
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: calc(50vw - 50px);
+    bottom: 20px;
+  }
+}
+.controls-left-arrow {
+  left: 0;
+}
+.controls-right-arrow {
+  right: 0;
+}
 .controls-button {
   cursor: pointer;
   background-color: rgba(208, 206, 204, 0.32);
@@ -875,6 +890,7 @@ body ::-moz-selection {
     padding: 0;
     position: absolute;
     opacity: 0;
+    left: -9999px;
   }
 }
 .controls-button img {
@@ -975,6 +991,13 @@ body ::-moz-selection {
   left: 2rem;
   top: 2rem;
 }
+@media (max-width: 920px) {
+  .back-button-container {
+    left: calc(4vw);
+    top: 2vh;
+    font-size: 0.7rem;
+  }
+}
 .back-button-container a {
   height: 30px;
   width: 150px;
@@ -995,6 +1018,11 @@ body ::-moz-selection {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 920px) {
+  .back-button-container a .back-arrow {
+    width: 30px;
+  }
+}
 .back-button-container a .back-arrow:before, .back-button-container a .back-arrow:after {
   content: "";
   background: #fff;
@@ -1002,15 +1030,32 @@ body ::-moz-selection {
   height: 2px;
   width: 13px;
 }
+@media (max-width: 920px) {
+  .back-button-container a .back-arrow:before, .back-button-container a .back-arrow:after {
+    width: 10px;
+  }
+}
 .back-button-container a .back-arrow:before {
   left: -4px;
   bottom: -4px;
   transform: rotate(45deg);
 }
+@media (max-width: 920px) {
+  .back-button-container a .back-arrow:before {
+    left: -3px;
+    bottom: -3px;
+  }
+}
 .back-button-container a .back-arrow:after {
   left: -4px;
   top: -4px;
   transform: rotate(-45deg);
+}
+@media (max-width: 920px) {
+  .back-button-container a .back-arrow:after {
+    left: -3px;
+    top: -3px;
+  }
 }
 .back-button-container a .back-arrow-text {
   font-family: "Fira Mono", monospace;

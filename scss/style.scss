@@ -579,7 +579,7 @@ body {
     min-height: 36rem;
     position: relative;
     @include media(630px) {
-        height: 100vh;
+        height: calc(100vh - 44px);
         min-height: 0;
     }
 }
@@ -666,7 +666,7 @@ body {
             left: calc(#{$left-offset-small} + (.7) * #{$rect-width-small});
         }
         @include media(640px) {
-            top: 50%;
+            top: 48vh;
             transform: translateY(-50%);
             left: 0;
             width: 100%;
@@ -689,12 +689,11 @@ body {
                 font-size: 5.5rem;
             }
             @include media(640px) {
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
             @include media(640px) {
                 font-size: 5rem;
                 letter-spacing: 0.1rem;
-                width: 60%;
                 position: relative;
                 left: calc(2vw + (.7) * 16vw);
             }
@@ -761,12 +760,10 @@ body {
             width: $rect-width-small;
             border-width: $rect-border-width-small;
         }
-        @include media-height(730px) {
-            top: 30%;
-            transform: translateY(-30%);
+        @media (max-width: 640px) and (min-height: 700px) {
+            top: 10vh;
         }
         @include media(640px) {
-            top: 30%;
             transform: translateY(-40%);
             left: calc(2vw + (.7) * 16vw);
             width: 38vh;
@@ -825,6 +822,24 @@ body {
           left: 0;
         }
     }
+    &-left-arrow,
+    &-right-arrow {
+      display: none;
+
+      @include media(640px) {
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: calc(50vw - 50px);
+        bottom: 20px;
+      }
+    }
+    &-left-arrow {
+      left: 0;
+    }
+    &-right-arrow {
+      right: 0;
+    }
     &-button {
         @extend %callout;
         cursor: pointer;
@@ -842,6 +857,7 @@ body {
             padding: 0;
             position: absolute;
             opacity: 0;
+            left: -9999px;
         }
         img {
           width: 100px;
@@ -945,61 +961,81 @@ body {
     left: 2rem;
     top: 2rem;
 
+    @include media(920px) {
+      left: calc(4vw);
+      top: 2vh;
+      font-size: 0.7rem;
+    }
     a {
-        height: 30px;
-        width: 150px;
-        display: flex;
-        align-items: center;
-        filter: blur(0.4px);
-        opacity: 0.8;
-        transition: .18s ease-in-out;
+      height: 30px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      filter: blur(0.4px);
+      opacity: 0.8;
+      transition: .18s ease-in-out;
 
-        &:hover {
-            opacity: 1;
+      &:hover {
+          opacity: 1;
+      }
+
+      .back-arrow {
+        background: #fff;
+        height: 2px;
+        width: 70px;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+        @include media(920px) {
+          width: 30px;
         }
 
-        .back-arrow {
+        &:before,
+        &:after {
+          content: "";
           background: #fff;
+          position: absolute;
           height: 2px;
-          width: 70px;
-          margin: 0 auto;
-          position: relative;
-          cursor: pointer;
+          width: 13px;
 
-          &:before,
-          &:after {
-            content: "";
-            background: #fff;
-            position: absolute;
-            height: 2px;
-            width: 13px;
-          }
-
-          &:before {
-            left: -4px;
-            bottom: -4px;
-            transform: rotate(45deg);
-          }
-
-          &:after {
-            left: -4px;
-            top: -4px;
-            transform: rotate(-45deg);
+          @include media(920px) {
+            width: 10px
           }
         }
-        .back-arrow-text {
-          font-family: "Fira Mono", monospace;
-          text-transform: uppercase;
-          color: #fff;
-          letter-spacing: 0.12rem;
-          font-size: 0.8rem;
-          font-weight: 800;
-          line-height: 1;
-          text-decoration: none !important;
-          padding-left: 1rem;
-          padding-top: 1px;
-          white-space: nowrap;
+
+        &:before {
+          left: -4px;
+          bottom: -4px;
+          transform: rotate(45deg);
+          @include media(920px) {
+            left: -3px;
+            bottom: -3px;
+          }
         }
+
+        &:after {
+          left: -4px;
+          top: -4px;
+          transform: rotate(-45deg);
+          @include media(920px) {
+            left: -3px;
+            top: -3px;
+          }
+        }
+      }
+      .back-arrow-text {
+        font-family: "Fira Mono", monospace;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 0.12rem;
+        font-size: 0.8rem;
+        font-weight: 800;
+        line-height: 1;
+        text-decoration: none !important;
+        padding-left: 1rem;
+        padding-top: 1px;
+        white-space: nowrap;
+      }
     }
 }
 
