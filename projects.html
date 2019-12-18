@@ -26,7 +26,7 @@
         <div class="splashScreen screen-effect">
           <div class="loadingContainer">
             <div class="loadingElements">
-              <img src="https://i.imgur.com/tr5kmLM.png" class="splashLogo">
+              <img src="img/aexion_loading_ico.png" class="splashLogo">
               <div class="loadingBarCont">
                 <div class="loadingBar"></div>
               </div>
@@ -105,7 +105,17 @@
             </div>
             <div class="project_content section--medium">
               <div class="content_image_block">
-                <img src="img/project-test-img.png" />
+                <img src="img/ididwhat-sketch-01.jpg" />
+              </div>
+            </div>
+            <div class="project_content section--medium">
+              <div class="content_image_block">
+                <img src="img/ididwhat-lifestyle-01-full.jpg" />
+              </div>
+            </div>
+            <div class="project_content section--medium">
+              <div class="content_image_block">
+                <img src="img/ididwhat-sketch-01.jpg" />
               </div>
             </div>
               <ul>
@@ -172,7 +182,9 @@
 
       <div id="app">
           <loading-screen v-if="isLoading"></loading-screen>
-          <router-view></router-view>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
       </div>
       <script src="js/main.js"></script>
       <script src="js/vue-router.js"></script>
