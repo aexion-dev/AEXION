@@ -475,67 +475,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.2295601356;
+    opacity: 0.7216902475;
   }
   5% {
-    opacity: 0.3383443225;
+    opacity: 0.637966991;
   }
   10% {
-    opacity: 0.4149506156;
+    opacity: 0.8028387571;
   }
   15% {
-    opacity: 0.400359787;
+    opacity: 0.7271081891;
   }
   20% {
-    opacity: 0.8376754697;
+    opacity: 0.4027366742;
   }
   25% {
-    opacity: 0.439573972;
+    opacity: 0.4513575611;
   }
   30% {
-    opacity: 0.0459897062;
+    opacity: 0.9194994619;
   }
   35% {
-    opacity: 0.0728788449;
+    opacity: 0.051140965;
   }
   40% {
-    opacity: 0.0672087051;
+    opacity: 0.7705318938;
   }
   45% {
-    opacity: 0.2855993292;
+    opacity: 0.0906379462;
   }
   50% {
-    opacity: 0.2323904554;
+    opacity: 0.8041357441;
   }
   55% {
-    opacity: 0.8315646212;
+    opacity: 0.0795113057;
   }
   60% {
-    opacity: 0.2383196345;
+    opacity: 0.3229882203;
   }
   65% {
-    opacity: 0.1676173624;
+    opacity: 0.4896132025;
   }
   70% {
-    opacity: 0.4120880271;
+    opacity: 0.7960494674;
   }
   75% {
-    opacity: 0.3055422907;
+    opacity: 0.0783460612;
   }
   80% {
-    opacity: 0.509977821;
+    opacity: 0.7510031493;
   }
   85% {
-    opacity: 0.6110172626;
+    opacity: 0.8165993449;
   }
   90% {
-    opacity: 0.4317530956;
+    opacity: 0.5388820304;
   }
   95% {
-    opacity: 0.5807688621;
+    opacity: 0.3691712491;
   }
   100% {
-    opacity: 0.208052586;
+    opacity: 0.4986158246;
   }
 }
 @keyframes menuAnimation {
@@ -1387,6 +1387,7 @@ body ::-moz-selection {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  padding: 20px;
   overflow: hidden;
   z-index: 3;
   font-size: 16px;
@@ -1397,6 +1398,7 @@ body ::-moz-selection {
   user-select: none;
   letter-spacing: 6px;
   mix-blend-mode: screen;
+  cursor: pointer;
   filter: blur(0.6px);
   animation: blink 1.4s ease-in-out infinite;
 }
@@ -1468,6 +1470,9 @@ body ::-moz-selection {
   font-size: 14px;
   line-height: 1.8;
   color: #fff;
+}
+.project_wrapper .project_info li {
+  white-space: nowrap;
 }
 .project_wrapper .project_content .content_image_block {
   position: relative;

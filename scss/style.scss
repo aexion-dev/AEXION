@@ -1383,6 +1383,7 @@ $text-cut-up: .5s;
       left: 50%;
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
+      padding: 20px;
       overflow: hidden;
       z-index: 3;
       font-size: 16px;
@@ -1393,6 +1394,7 @@ $text-cut-up: .5s;
       user-select: none;
       letter-spacing: 6px;
       mix-blend-mode: screen;
+      cursor: pointer;
       filter: blur(.6px);
       animation: blink 1.4s ease-in-out infinite;
     }
@@ -1467,6 +1469,9 @@ $text-cut-up: .5s;
       font-size: 14px;
       line-height: 1.8;
       color: #fff;
+    }
+    li {
+      white-space: nowrap;
     }
   }
 
