@@ -35,10 +35,6 @@ $(document).ready(function() {
         || (navigator.msMaxTouchPoints > 0));
   }
 
-  /*if (is_touch_device()) {
-    document.getElementById('start-msg').innerHTML='[ TAP HERE TO START ]';
-  }*/
-
   //User Clicks Start Message
   startmsg.click(function(){
       stage01.removeClass( "active" );

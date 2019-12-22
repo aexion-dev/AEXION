@@ -575,11 +575,12 @@ body {
 }
 
 .wrapper {
-    height: calc(100vh - #{$whitespace-height});
+    height: 100vh;
     min-height: 36rem;
     position: relative;
     @include media(630px) {
-        height: calc(100vh - 44px);
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         min-height: 0;
     }
 }
@@ -666,7 +667,7 @@ body {
             left: calc(#{$left-offset-small} + (.7) * #{$rect-width-small});
         }
         @include media(640px) {
-            top: 48vh;
+            top: 45vh;
             transform: translateY(-50%);
             left: 0;
             width: 100%;
@@ -747,7 +748,6 @@ body {
         width: $rect-width;
         border-image-slice: 10%;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         left: $left-offset;
         border-width: $rect-border-width;
@@ -760,14 +760,12 @@ body {
             width: $rect-width-small;
             border-width: $rect-border-width-small;
         }
-        @media (max-width: 640px) and (min-height: 700px) {
-            top: 10vh;
-        }
         @include media(640px) {
             transform: translateY(-40%);
             left: calc(2vw + (.7) * 16vw);
             width: 38vh;
             height: 38vh;
+            top: 0px;
         }
         &-filter {
             filter: brightness(110%) contrast(110%) saturate(110%);
@@ -1339,10 +1337,16 @@ $text-cut-up: .5s;
     width: 100vw;
     height: 100vh;
 
+    @include media(630px) {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        min-height: 0;
+    }
+
   .project_header {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
