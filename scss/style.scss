@@ -575,12 +575,11 @@ body {
 }
 
 .wrapper {
-    height: 100vh;
+    height: calc(100vh - #{$whitespace-height});
     min-height: 36rem;
     position: relative;
     @include media(630px) {
-        height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
+        height: calc(100vh - 44px);
         min-height: 0;
     }
 }
