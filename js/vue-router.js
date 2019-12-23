@@ -38,7 +38,7 @@ const Home = {
                 bgImg: "img/ams_bg.jpg",
                 rectImg: "img/ams_thumb.png",
                 icoImg: "img/ams_icon.png",
-                routeURL: "/i-did-what"
+                routeURL: "/ams-building"
             },
             {
                 headlineFirstLine: "COYOTE",
@@ -145,15 +145,55 @@ const IDidWhat = {
 const Elisian = {
     template: '#elisian-project',
     mounted() {
+
       var Scrollbar = window.Scrollbar;
-      Scrollbar.init(document.querySelector('#scrollbar'), {
+      const scrollbar = Scrollbar.init(document.querySelector('#scrollbar'), {
         damping: 0.1
+      });
+
+      document.querySelector('#project-scroll').addEventListener("click", function(event) {
+        scrollbar.scrollIntoView(document.querySelector('#project-start'));
+      });
+
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
       });
     },
 };
 
 const AMSBuilding = {
-    template: '#project-template'
+    template: '#ams-project',
+    mounted() {
+
+      var Scrollbar = window.Scrollbar;
+      const scrollbar = Scrollbar.init(document.querySelector('#scrollbar'), {
+        damping: 0.1
+      });
+
+      document.querySelector('#project-scroll').addEventListener("click", function(event) {
+        scrollbar.scrollIntoView(document.querySelector('#project-start'));
+      });
+
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    },
 };
 
 const CoyoteBoxing = {

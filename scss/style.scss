@@ -973,6 +973,10 @@ body {
       opacity: 0.8;
       transition: .18s ease-in-out;
 
+      &.router-link-active {
+        width: 100px;
+      }
+
       &:hover {
           opacity: 1;
       }

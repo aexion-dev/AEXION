@@ -475,67 +475,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.1311463279;
+    opacity: 0.2675098724;
   }
   5% {
-    opacity: 0.9747370592;
+    opacity: 0.5013581418;
   }
   10% {
-    opacity: 0.4791795276;
+    opacity: 0.7940653642;
   }
   15% {
-    opacity: 0.2969096971;
+    opacity: 0.8655813459;
   }
   20% {
-    opacity: 0.2757395082;
+    opacity: 0.8038535024;
   }
   25% {
-    opacity: 0.752601266;
+    opacity: 0.4100524747;
   }
   30% {
-    opacity: 0.7711203944;
+    opacity: 0.2539126731;
   }
   35% {
-    opacity: 0.2167722554;
+    opacity: 0.9381153963;
   }
   40% {
-    opacity: 0.7989629269;
+    opacity: 0.9500339204;
   }
   45% {
-    opacity: 0.1724572098;
+    opacity: 0.7323698094;
   }
   50% {
-    opacity: 0.7120344659;
+    opacity: 0.1726072243;
   }
   55% {
-    opacity: 0.0717870734;
+    opacity: 0.1159735884;
   }
   60% {
-    opacity: 0.6775214872;
+    opacity: 0.2014452772;
   }
   65% {
-    opacity: 0.5610519438;
+    opacity: 0.9453489987;
   }
   70% {
-    opacity: 0.3200695485;
+    opacity: 0.2403244764;
   }
   75% {
-    opacity: 0.5696639654;
+    opacity: 0.3649108317;
   }
   80% {
-    opacity: 0.2340576869;
+    opacity: 0.2826314399;
   }
   85% {
-    opacity: 0.2269200644;
+    opacity: 0.3178564046;
   }
   90% {
-    opacity: 0.503360142;
+    opacity: 0.0816237355;
   }
   95% {
-    opacity: 0.0912657428;
+    opacity: 0.4538702749;
   }
   100% {
-    opacity: 0.3540889577;
+    opacity: 0.5716105769;
   }
 }
 @keyframes menuAnimation {
@@ -1002,6 +1002,9 @@ body ::-moz-selection {
   filter: blur(0.4px);
   opacity: 0.8;
   transition: 0.18s ease-in-out;
+}
+.back-button-container a.router-link-active {
+  width: 100px;
 }
 .back-button-container a:hover {
   opacity: 1;
