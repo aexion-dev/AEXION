@@ -48,17 +48,17 @@ const Home = {
                 bgImg: "img/cbc_bg.jpg",
                 rectImg: "img/cbc_thumb.png",
                 icoImg: "img/cbc_icon.png",
-                routeURL: "/i-did-what"
+                routeURL: "/coyote-boxing"
             },
             {
-                headlineFirstLine: "Compass",
-                headlineSecondLine: " ",
-                sublineFirstLine: "UX DESIGN",
-                sublineSecondLine: "WEB DESIGN",
-                bgImg: "img/compass_bg.jpg",
-                rectImg: "img/compass_thumb.png",
-                icoImg: "img/compass_icon.png",
-                routeURL: "/i-did-what"
+                headlineFirstLine: "PROOF",
+                headlineSecondLine: "MAGAZINE",
+                sublineFirstLine: "PRINT DESIGN",
+                sublineSecondLine: "PHOTOGRAPHY",
+                bgImg: "img/proof_bg.jpg",
+                rectImg: "img/proof_thumb.png",
+                icoImg: "img/proof_icon.png",
+                routeURL: "/proof"
             }
         ]
       }
@@ -197,11 +197,57 @@ const AMSBuilding = {
 };
 
 const CoyoteBoxing = {
-    template: '#project-template'
+    template: '#coyote-boxing-project',
+    mounted() {
+
+      var Scrollbar = window.Scrollbar;
+      const scrollbar = Scrollbar.init(document.querySelector('#scrollbar'), {
+        damping: 0.1
+      });
+
+      document.querySelector('#project-scroll').addEventListener("click", function(event) {
+        scrollbar.scrollIntoView(document.querySelector('#project-start'));
+      });
+
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    },
 };
 
-const Compass = {
-    template: '#project-template'
+const Proof = {
+    template: '#proof-project',
+    mounted() {
+
+      var Scrollbar = window.Scrollbar;
+      const scrollbar = Scrollbar.init(document.querySelector('#scrollbar'), {
+        damping: 0.1
+      });
+
+      document.querySelector('#project-scroll').addEventListener("click", function(event) {
+        scrollbar.scrollIntoView(document.querySelector('#project-start'));
+      });
+
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    },
 };
 
 const routes = [
@@ -210,7 +256,7 @@ const routes = [
     { path: '/elisian', component: Elisian },
     { path: '/ams-building', component: AMSBuilding },
     { path: '/coyote-boxing', component: CoyoteBoxing },
-    { path: '/compass', component: Compass }
+    { path: '/proof', component: Proof }
 ]
 
 const router = new VueRouter({
