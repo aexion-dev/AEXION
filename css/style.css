@@ -217,6 +217,8 @@ body {
   margin-bottom: 30px;
   padding-left: 25px;
   padding-bottom: 1px;
+  color: #fff;
+  text-decoration: none;
 }
 .main-menu .menu-option:hover {
   cursor: pointer;
@@ -475,67 +477,67 @@ body {
 }
 @keyframes flicker {
   0% {
-    opacity: 0.3163152922;
+    opacity: 0.4901955572;
   }
   5% {
-    opacity: 0.7492128475;
+    opacity: 0.6490430611;
   }
   10% {
-    opacity: 0.7333246509;
+    opacity: 0.7134617916;
   }
   15% {
-    opacity: 0.0414409817;
+    opacity: 0.4759071337;
   }
   20% {
-    opacity: 0.6643119561;
+    opacity: 0.6333357808;
   }
   25% {
-    opacity: 0.6229251849;
+    opacity: 0.5777268073;
   }
   30% {
-    opacity: 0.7707419099;
+    opacity: 0.4142496797;
   }
   35% {
-    opacity: 0.5606132727;
+    opacity: 0.0296947274;
   }
   40% {
-    opacity: 0.290039423;
+    opacity: 0.9017489784;
   }
   45% {
-    opacity: 0.6821248743;
+    opacity: 0.7513800082;
   }
   50% {
-    opacity: 0.164026574;
+    opacity: 0.3765918285;
   }
   55% {
-    opacity: 0.2940551344;
+    opacity: 0.2886344848;
   }
   60% {
-    opacity: 0.4316211947;
+    opacity: 0.5237430751;
   }
   65% {
-    opacity: 0.2556609276;
+    opacity: 0.5763749445;
   }
   70% {
-    opacity: 0.9219599101;
+    opacity: 0.9294871512;
   }
   75% {
-    opacity: 0.5904842353;
+    opacity: 0.2861120633;
   }
   80% {
-    opacity: 0.4241210429;
+    opacity: 0.8782723878;
   }
   85% {
-    opacity: 0.3784485008;
+    opacity: 0.4364366765;
   }
   90% {
-    opacity: 0.2504034661;
+    opacity: 0.1038852305;
   }
   95% {
-    opacity: 0.2144031777;
+    opacity: 0.05801133;
   }
   100% {
-    opacity: 0.2849203968;
+    opacity: 0.7626454448;
   }
 }
 @keyframes menuAnimation {
@@ -1484,15 +1486,19 @@ body ::-moz-selection {
   position: relative;
   width: 100%;
   margin-bottom: 176px;
+  text-align: center;
 }
 @media (max-width: 960px) {
   .project_wrapper .project_content .content_image_block {
     margin-bottom: 90px;
   }
 }
-.project_wrapper .project_content .content_image_block img {
+.project_wrapper .project_content .content_image_block img, .project_wrapper .project_content .content_image_block video {
   width: 100%;
   height: auto;
+}
+.project_wrapper .project_content .content_image_block video {
+  max-width: 1008px;
 }
 
 .section--small {

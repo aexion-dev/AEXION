@@ -285,6 +285,8 @@ body {
     margin-bottom: 30px;
     padding-left: 25px;
     padding-bottom: 1px;
+    color: #fff;
+    text-decoration: none;
 
     &:hover {
       cursor: pointer;
@@ -1488,14 +1490,19 @@ $text-cut-up: .5s;
       position: relative;
       width: 100%;
       margin-bottom: 176px;
+      text-align: center;
 
       @include media(960px) {
         margin-bottom: 90px;
       }
 
-      img {
+      img, video {
         width: 100%;
         height: auto;
+      }
+
+      video {
+        max-width: 1008px;
       }
     }
   }

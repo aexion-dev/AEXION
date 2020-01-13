@@ -3,6 +3,7 @@ Vue.component('loading-screen', {
 })
 
 const Home = {
+    name: 'home',
     template: '#home',
     data() {
       return {
@@ -33,8 +34,8 @@ const Home = {
             {
                 headlineFirstLine: "AMS",
                 headlineSecondLine: "Building",
-                sublineFirstLine: "BRAND IDENTITY",
-                sublineSecondLine: "WEB DESIGN",
+                sublineFirstLine: "BRANDING",
+                sublineSecondLine: "PRINT DESIGN",
                 bgImg: "img/ams_bg.jpg",
                 rectImg: "img/ams_thumb.png",
                 icoImg: "img/ams_icon.png",
@@ -43,8 +44,8 @@ const Home = {
             {
                 headlineFirstLine: "COYOTE",
                 headlineSecondLine: "BOXING",
-                sublineFirstLine: "LOGO DESIGN",
-                sublineSecondLine: "BRAND IDENTITY",
+                sublineFirstLine: "BRANDING",
+                sublineSecondLine: "WEB DESIGN",
                 bgImg: "img/cbc_bg.jpg",
                 rectImg: "img/cbc_thumb.png",
                 icoImg: "img/cbc_icon.png",
