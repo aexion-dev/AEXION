@@ -32,6 +32,16 @@ const Home = {
                 routeURL: "/elisian"
             },
             {
+                headlineFirstLine: "PROOF",
+                headlineSecondLine: "MAGAZINE",
+                sublineFirstLine: "PRINT DESIGN",
+                sublineSecondLine: "PHOTOGRAPHY",
+                bgImg: "img/proof_bg.jpg",
+                rectImg: "img/proof_thumb.png",
+                icoImg: "img/proof_icon.png",
+                routeURL: "/proof"
+            },
+            {
                 headlineFirstLine: "AMS",
                 headlineSecondLine: "Building",
                 sublineFirstLine: "BRANDING",
@@ -50,16 +60,6 @@ const Home = {
                 rectImg: "img/cbc_thumb.png",
                 icoImg: "img/cbc_icon.png",
                 routeURL: "/coyote-boxing"
-            },
-            {
-                headlineFirstLine: "PROOF",
-                headlineSecondLine: "MAGAZINE",
-                sublineFirstLine: "PRINT DESIGN",
-                sublineSecondLine: "PHOTOGRAPHY",
-                bgImg: "img/proof_bg.jpg",
-                rectImg: "img/proof_thumb.png",
-                icoImg: "img/proof_icon.png",
-                routeURL: "/proof"
             }
         ]
       }
