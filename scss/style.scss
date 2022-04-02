@@ -827,11 +827,19 @@ body {
       display: none;
 
       @include media(640px) {
-        display: block;
+        display: flex;
         position: absolute;
         height: 100px;
         width: calc(50vw - 50px);
         bottom: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-svg {
+        fill: #b2b2b2;
+        height: 40px;
+        width: 21px;
       }
     }
     &-left-arrow {

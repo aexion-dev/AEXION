@@ -855,12 +855,20 @@ body ::-moz-selection {
 }
 @media (max-width: 640px) {
   .controls-left-arrow, .controls-right-arrow {
-    display: block;
+    display: flex;
     position: absolute;
     height: 100px;
     width: calc(50vw - 50px);
     bottom: 20px;
+    align-items: center;
+    justify-content: center;
   }
+}
+
+.controls-left-arrow svg, .controls-right-arrow svg {
+  fill: #b2b2b2;
+  height: 40px;
+  width: 21px;
 }
 .controls-left-arrow {
   left: 0;

@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script src="js/smooth-scrollbar.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <script src="js/vue/vue-router.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
@@ -54,12 +54,16 @@
                   <h2 class="slide-side-text"><span>{{ slide.sublineFirstLine }} / </span><span>{{ slide.sublineSecondLine }}</span></h2></div>
           </div>
           <div class="controls-container">
-              <div class="controls-left-arrow" v-on:click="prevSlide()"></div>
+              <div class="controls-left-arrow" v-on:click="prevSlide()">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 56.6">				<polygon class="prev" points="0,28.3 2.1,30.4 28.3,56.6 30.4,54.4 4.2,28.3 30.4,2.1 28.3,0 2.1,26.2 2.1,26.2 "></polygon></svg>
+              </div>
               <button class="controls-button"
                       v-for="(slide, index) in slides"
                       v-bind:class="{ active: index === currentSlide }"
                       v-on:click="updateSlide(index)"><img v-bind:src='slide.icoImg'/></button>
-              <div class="controls-right-arrow" v-on:click="nextSlide()"></div>
+              <div class="controls-right-arrow" v-on:click="nextSlide()">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 56.6">				<polygon class="next" points="30.4,28.3 28.3,26.2 2.1,0 0,2.1 26.2,28.3 0,54.4 2.1,56.6 28.3,30.4 28.3,30.4 "></polygon></svg>
+              </div>
           </div>
           <div class="pagination-container">
               <span class="pagination-item"
